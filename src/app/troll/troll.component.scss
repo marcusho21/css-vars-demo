@@ -1,0 +1,57 @@
+// https://ionicframework.com/docs/components
+
+:host {
+  --width: 300px;
+  --title-align: center;
+  --troll-color: #3b8460;
+  --color: #ff7a97;
+  --border: none;
+
+  background-color: #ffdae2;
+  width: var(--width);
+}
+
+// :host(.trolling) {
+//   --color: ##52b886;
+//   --troll-color: #d73b24;
+
+//   .title {
+//     color: #f86243;
+//   }
+// }
+
+.title {
+  text-align: var(--title-align);
+}
+
+.troll {
+  height: 500px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  grid-auto-rows: 100px 150px 50px;
+  font-size: 1.125rem;
+  color: var(--color);
+
+  & > * {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    border: var(--border);
+  }
+
+  &__head {
+    background-color: var(--troll-color);
+    width: 100px;
+  }
+
+  &__body {
+    background-color: var(--troll-color);
+    width: 120px;
+  }
+
+  &__feet {
+    background-color: var(--troll-color);
+    width: 100px;
+  }
+}

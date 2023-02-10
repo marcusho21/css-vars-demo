@@ -1,0 +1,13 @@
+<!-- <div class="app" [ngClass]="{ trolling: isTrolling }">
+  <app-troll></app-troll> -->
+<div class="app">
+  <app-troll
+    [title]="title"
+    [ngClass]="{ trolling: isTrolling, transform: isTransformed }"
+    (dblclick)="isTransformed = !isTransformed"
+  ></app-troll>
+
+  <div class="btn-group">
+    <button (click)="toggleTrolling()">troll or not to troll</button>
+  </div>
+</div>

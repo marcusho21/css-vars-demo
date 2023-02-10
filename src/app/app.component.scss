@@ -1,0 +1,53 @@
+.app {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  row-gap: 16px;
+
+  .btn-group {
+    display: flex;
+    gap: 16px;
+  }
+
+  app-troll {
+    &.trolling {
+      --color: ##52b886;
+      --troll-color: #d73b24;
+    }
+
+    @media screen and (max-width: 500px) {
+      --troll-color: red;
+      --width: 100%;
+      --font: 2rem;
+      --border: 1px solid #52b886;
+    }
+
+    &.transform {
+      &::part(head) {
+        background-image: url("../assets/head.png");
+        background-position: center;
+        background-size: contain;
+
+        // this selector is not working in the shadow DOM (it's supposed to not working)
+        p {
+          color: orangered;
+        }
+      }
+
+      &::part(body) {
+        background-image: url("../assets/body.jpeg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      &::part(feet) {
+        background-image: url("../assets/feet.png");
+        background-position: center;
+        background-size: cover;
+        --troll-color: green;
+      }
+    }
+  }
+}
